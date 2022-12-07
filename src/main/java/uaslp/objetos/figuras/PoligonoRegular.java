@@ -1,14 +1,20 @@
 package uaslp.objetos.figuras;
+import uaslp.objetos.exceptions.NumeroInvalidoDeLados;
 
-public class PoligonoRegular {
+public class PoligonoRegular extends Figura {
     private int numeroDeLados;  //6
     private double lado;      //10
 
-    public PoligonoRegular(int numeroDeLados) {
+    public PoligonoRegular(int numeroDeLados) throws NumeroInvalidoDeLados{
+        super("Poligono Regular");
+        if(numeroDeLados <= 3){
+            throw new NumeroInvalidoDeLados();
+        }
         this.numeroDeLados = numeroDeLados;
     }
 
     public PoligonoRegular(int numeroDeLados, double lado) {
+        super("Poligono Regular");
         this.numeroDeLados = numeroDeLados;
         this.lado = lado;
     }
